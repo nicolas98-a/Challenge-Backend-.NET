@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj": {}
+    "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj": {}
   },
   "projects": {
-    "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj": {
+    "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
+        "projectUniqueName": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
         "projectName": "Challenge.Backend.Application",
-        "projectPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
+        "projectPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
         "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
-        "outputPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\obj\\",
+        "outputPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj": {
-                "projectPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj"
+              "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj": {
+                "projectPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj"
               }
             }
           }
@@ -43,6 +43,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.2.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,14 +68,14 @@
         }
       }
     },
-    "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj": {
+    "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj",
+        "projectUniqueName": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj",
         "projectName": "Challenge.Backend.Domain",
-        "projectPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj",
+        "projectPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj",
         "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
-        "outputPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\obj\\",
+        "outputPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",

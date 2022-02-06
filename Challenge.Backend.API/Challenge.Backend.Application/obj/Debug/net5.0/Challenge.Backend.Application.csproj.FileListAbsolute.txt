@@ -1,0 +1,5 @@
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\bin\Debug\net5.0\Challenge.Backend.Domain.dll
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.csprojAssemblyReference.cache
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.GeneratedMSBuildEditorConfig.editorconfig
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.AssemblyInfoInputs.cache
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.AssemblyInfo.cs

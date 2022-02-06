@@ -1,7 +1,9 @@
+using Challenge.Backend.AccessData;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +30,10 @@ namespace Challenge.Backend.API
         {
 
             services.AddControllers();
+            var connectionstring = Configuration.GetSection("ConnectionString").Value;
+            //EF Core
+            services.AddDbContext<DisneyDbContext>(options => options.UseSqlServer(connectionstring));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Challenge.Backend.API", Version = "v1" });

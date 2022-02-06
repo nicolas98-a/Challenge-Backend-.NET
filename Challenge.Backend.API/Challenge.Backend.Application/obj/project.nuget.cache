@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "DpWpjLDLOpfozcmnp0AlU/YcZE1b3Mdbgm8ptywOiCuqeQbvIl/48HV4wNvTJ5orDYFJAjkeojg04DgsmgWJpw==",
+  "dgSpecHash": "KrsZuy/vjht7ERi0xtkjTnllcNYeh1HS7ePI80crbtPPL6c9DAI2xt1pMYTjcdEfFI9boPrQwDNjRpRB7m0ybg==",
   "success": true,
-  "projectFilePath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nico\\.nuget\\packages\\fluentvalidation\\10.2.1\\fluentvalidation.10.2.1.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.2.1\\fluentvalidation.aspnetcore.10.2.1.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.2.1\\fluentvalidation.dependencyinjectionextensions.10.2.1.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

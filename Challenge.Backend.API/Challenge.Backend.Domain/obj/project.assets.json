@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj",
+      "projectUniqueName": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj",
       "projectName": "Challenge.Backend.Domain",
-      "projectPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj",
+      "projectPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj",
       "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
-      "outputPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\obj\\",
+      "outputPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",

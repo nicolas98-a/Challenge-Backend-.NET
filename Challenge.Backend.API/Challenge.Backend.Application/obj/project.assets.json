@@ -2,6 +2,53 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "FluentValidation/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation.AspNetCore/10.2.1": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "10.2.1",
+          "FluentValidation.DependencyInjectionExtensions": "10.2.1"
+        },
+        "compile": {
+          "lib/net5.0/FluentValidation.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/FluentValidation.AspNetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "FluentValidation.DependencyInjectionExtensions/10.2.1": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "10.2.1",
+          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
       "Challenge.Backend.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -15,6 +62,69 @@
     }
   },
   "libraries": {
+    "FluentValidation/10.2.1": {
+      "sha512": "ZFyVk+AXiWjML6M201GUbkhrmrUfd1U55LmOPOEHpw2bQ+STi0TIilXX3KlWvqt5AX5qSu+B1d/s/Ik5p6Tu3Q==",
+      "type": "package",
+      "path": "fluentvalidation/10.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluent-validation-icon.png",
+        "fluentvalidation.10.2.1.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.AspNetCore/10.2.1": {
+      "sha512": "YFUYLbPdgR2cdGXdwxGzqFH/aIDq31X+SdSowA7dlbkcGEosP9xUzGB271vCRXZ+KGW31ICEIXl5zEnT3A8FGQ==",
+      "type": "package",
+      "path": "fluentvalidation.aspnetcore/10.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluent-validation-icon.png",
+        "fluentvalidation.aspnetcore.10.2.1.nupkg.sha512",
+        "fluentvalidation.aspnetcore.nuspec",
+        "lib/net5.0/FluentValidation.AspNetCore.dll",
+        "lib/net5.0/FluentValidation.AspNetCore.xml",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.xml"
+      ]
+    },
+    "FluentValidation.DependencyInjectionExtensions/10.2.1": {
+      "sha512": "iLzhlZACcu/DZ0OSoA6M/lHuGak3Bl9koFKC58ntNUDEa6BwhCS3JMKGQfJfWAU30D7DlBeKuZOySEK+93TSPA==",
+      "type": "package",
+      "path": "fluentvalidation.dependencyinjectionextensions/10.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluent-validation-icon.png",
+        "fluentvalidation.dependencyinjectionextensions.10.2.1.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.nuspec",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
+      "sha512": "8/CtASu80UIoyG+r8FstrmZW5GLtXxzoYpjj3jV0FKZCL5CiFgSH3pAmqut/dC68mu7N1bU6v0UtKKL3gCUQGQ==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec"
+      ]
+    },
     "Challenge.Backend.Domain/1.0.0": {
       "type": "project",
       "path": "../Challenge.Backend.Domain/Challenge.Backend.Domain.csproj",
@@ -23,7 +133,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Challenge.Backend.Domain >= 1.0.0"
+      "Challenge.Backend.Domain >= 1.0.0",
+      "FluentValidation.AspNetCore >= 10.2.1"
     ]
   },
   "packageFolders": {
@@ -32,11 +143,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
+      "projectUniqueName": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
       "projectName": "Challenge.Backend.Application",
-      "projectPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
+      "projectPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\Challenge.Backend.Application.csproj",
       "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
-      "outputPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\obj\\",
+      "outputPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +164,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj": {
-              "projectPath": "H:\\Documentos\\Alkemy\\Alkemy Challenge Backend c# .NET\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj"
+            "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj": {
+              "projectPath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.Domain\\Challenge.Backend.Domain.csproj"
             }
           }
         }
@@ -68,6 +179,12 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "FluentValidation.AspNetCore": {
+            "target": "Package",
+            "version": "[10.2.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
