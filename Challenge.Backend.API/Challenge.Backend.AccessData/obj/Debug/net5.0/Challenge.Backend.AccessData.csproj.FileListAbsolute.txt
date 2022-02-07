@@ -4,3 +4,17 @@ G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backe
 G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\obj\Debug\net5.0\Challenge.Backend.AccessData.GeneratedMSBuildEditorConfig.editorconfig
 G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\obj\Debug\net5.0\Challenge.Backend.AccessData.AssemblyInfoInputs.cache
 G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\obj\Debug\net5.0\Challenge.Backend.AccessData.AssemblyInfo.cs
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\bin\Debug\net5.0\Challenge.Backend.AccessData.deps.json
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\bin\Debug\net5.0\Challenge.Backend.AccessData.runtimeconfig.json
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\bin\Debug\net5.0\Challenge.Backend.AccessData.runtimeconfig.dev.json
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\bin\Debug\net5.0\Challenge.Backend.AccessData.dll
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\bin\Debug\net5.0\ref\Challenge.Backend.AccessData.dll
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\bin\Debug\net5.0\Challenge.Backend.AccessData.pdb
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\bin\Debug\net5.0\Challenge.Backend.Application.pdb
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\bin\Debug\net5.0\Challenge.Backend.Domain.pdb
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\obj\Debug\net5.0\Challenge.Backend.AccessData.csproj.CoreCompileInputs.cache
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\obj\Debug\net5.0\Challenge.Backend.AccessData.csproj.CopyComplete
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\obj\Debug\net5.0\Challenge.Backend.AccessData.dll
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\obj\Debug\net5.0\ref\Challenge.Backend.AccessData.dll
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\obj\Debug\net5.0\Challenge.Backend.AccessData.pdb
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.AccessData\obj\Debug\net5.0\Challenge.Backend.AccessData.genruntimeconfig.cache

@@ -10,23 +10,15 @@ namespace Challenge.Backend.AccessData.Configuration
 {
     public class CharacterConfiguration
     {
-        public CharacterConfiguration(EntityTypeBuilder<Character> entityBuilder)
+        public CharacterConfiguration(EntityTypeBuilder<Character> entityTypeBuilder)
         {
-            entityBuilder.HasIndex(x => x.CharacterId);
-            entityBuilder.Property(x => x.Image).IsRequired();
-            entityBuilder.Property(x => x.Name).IsRequired().HasMaxLength(50);
-            entityBuilder.Property(x => x.Age).IsRequired();
-            entityBuilder.Property(x => x.Weight).IsRequired();
-            entityBuilder.Property(x => x.History).IsRequired().HasMaxLength(250);
+            entityTypeBuilder.HasIndex(x => x.CharacterId);
+            entityTypeBuilder.Property(x => x.Image).IsRequired();
+            entityTypeBuilder.Property(x => x.Name).IsRequired().HasMaxLength(50);
+            entityTypeBuilder.Property(x => x.Age).IsRequired();
+            entityTypeBuilder.Property(x => x.Weight).IsRequired();
+            entityTypeBuilder.Property(x => x.History).IsRequired();
 
-            #region Carga de personajes para testeo de la database
-
-            var characters = new List<Character>();
-
-            characters.Add(new Character { CharacterId = 1, Image = "", Name = "", Age = 1, Weight = 1, History = "" });
-
-            entityBuilder.HasData(characters);
-            #endregion
         }
     }
 }

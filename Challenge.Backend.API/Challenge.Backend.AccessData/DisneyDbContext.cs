@@ -31,13 +31,29 @@ namespace Challenge.Backend.AccessData
                                                .UsingEntity<CharacterMovieOrSerie>(
                                                    cm => cm.HasOne(prop => prop.MovieOrSerieNavigator).WithMany().HasForeignKey(prop => prop.MovieOrSerieId),
                                                    pg => pg.HasOne(prop => prop.CharacterNavigator).WithMany().HasForeignKey(prop => prop.CharacterId),
-                                                   pg => { pg.HasKey(prop => new { prop.CharacterId, prop.MovieOrSerieId, prop.CharacterMovieOrSerieId }); });
+                                                   pg => {pg.HasKey(prop => new { prop.CharacterId, prop.MovieOrSerieId, prop.CharacterMovieOrSerieId }); });
 
+            // Llamo al metodo que carga datos semilla para testeo de la base de datos
+            builder.Seed();
         }
 
         private void ModelConfig(ModelBuilder builder)
         {
             new CharacterConfiguration(builder.Entity<Character>());
+            new MovieOrSerieConfiguration(builder.Entity<MovieOrSerie>());
+            new GenreConfiguratoin(builder.Entity<Genre>());
+            new CharacterMovieOrSerieConfiguration(builder.Entity<CharacterMovieOrSerie>());
+        }
+    }
+
+    public class DisneyDbContextFactory : IDesignTimeDbContextFactory<DisneyDbContext>
+    {
+        public DisneyDbContext CreateDbContext(string[] args)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<DisneyDbContext>();
+            optionsBuilder.UseSqlServer("Server=.;Database=Disney_API_Db;Trusted_Connection=True;Integrated Security=True;;MultipleActiveResultSets=true");
+
+            return new DisneyDbContext(optionsBuilder.Options);
         }
     }
 }

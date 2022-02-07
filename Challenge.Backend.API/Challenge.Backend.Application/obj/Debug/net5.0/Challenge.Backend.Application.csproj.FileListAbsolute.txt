@@ -3,3 +3,13 @@ G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backe
 G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.GeneratedMSBuildEditorConfig.editorconfig
 G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.AssemblyInfoInputs.cache
 G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.AssemblyInfo.cs
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\bin\Debug\net5.0\Challenge.Backend.Application.deps.json
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\bin\Debug\net5.0\Challenge.Backend.Application.dll
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\bin\Debug\net5.0\ref\Challenge.Backend.Application.dll
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\bin\Debug\net5.0\Challenge.Backend.Application.pdb
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\bin\Debug\net5.0\Challenge.Backend.Domain.pdb
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.csproj.CoreCompileInputs.cache
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.csproj.CopyComplete
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.dll
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\ref\Challenge.Backend.Application.dll
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.Application\obj\Debug\net5.0\Challenge.Backend.Application.pdb
