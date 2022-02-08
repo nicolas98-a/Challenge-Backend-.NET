@@ -1,4 +1,9 @@
 using Challenge.Backend.AccessData;
+using Challenge.Backend.AccessData.Commands;
+using Challenge.Backend.AccessData.Queries;
+using Challenge.Backend.Application.Services;
+using Challenge.Backend.Domain.ICommands;
+using Challenge.Backend.Domain.IQueries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,8 +14,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SqlKata.Compilers;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -33,6 +41,17 @@ namespace Challenge.Backend.API
             var connectionstring = Configuration.GetSection("ConnectionString").Value;
             //EF Core
             services.AddDbContext<DisneyDbContext>(options => options.UseSqlServer(connectionstring));
+
+            // SQLKata
+            services.AddTransient<Compiler, SqlServerCompiler>();
+            services.AddTransient<IDbConnection>(b =>
+            {
+                return new SqlConnection(connectionstring);
+            });
+
+            services.AddTransient<IGenericsRepository, GenericRepository>();
+            services.AddTransient<ICharacterService, CharacterService>();
+            services.AddTransient<ICharacterQuery, CharacterQuery>();
 
             services.AddSwaggerGen(c =>
             {
