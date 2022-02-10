@@ -1,9 +1,11 @@
 using Challenge.Backend.AccessData;
 using Challenge.Backend.AccessData.Commands;
 using Challenge.Backend.AccessData.Queries;
+using Challenge.Backend.Application.Filters;
 using Challenge.Backend.Application.Services;
 using Challenge.Backend.Domain.ICommands;
 using Challenge.Backend.Domain.IQueries;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -52,6 +54,15 @@ namespace Challenge.Backend.API
             services.AddTransient<IGenericsRepository, GenericRepository>();
             services.AddTransient<ICharacterService, CharacterService>();
             services.AddTransient<ICharacterQuery, CharacterQuery>();
+
+            // Fluent Validation
+            services.AddMvc(options =>
+            {
+                options.Filters.Add<ValidationFilter>();
+            }).AddFluentValidation(options =>
+            {
+                options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            });
 
             services.AddSwaggerGen(c =>
             {

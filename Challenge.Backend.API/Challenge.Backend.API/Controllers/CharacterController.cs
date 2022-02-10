@@ -1,5 +1,6 @@
 ﻿using Challenge.Backend.Application.Services;
 using Challenge.Backend.Domain.DTOs;
+using Challenge.Backend.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -48,7 +49,7 @@ namespace Challenge.Backend.API.Controllers
             }
         }
 
-        [HttpPut("{Id}")]
+        [HttpPut("{id}")]
         public IActionResult PutCharacter(int id, CharacterRequestDto character)
         {
             try
@@ -68,7 +69,7 @@ namespace Challenge.Backend.API.Controllers
             }
         }
 
-        [HttpDelete("{Id}")]
+        [HttpDelete("{id}")]
         public IActionResult DeleteCharacter(int id)
         {
             try
