@@ -88,5 +88,19 @@ namespace Challenge.Backend.API.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet("{Id}")]
+        [ProducesResponseType(typeof(ResponseCharacterDetailDto), StatusCodes.Status200OK)]
+        public IActionResult GetCharacterDetails(int Id)
+        {
+            try
+            {
+                return new JsonResult(_service.GetCharacterDetail(Id)) { StatusCode = 200 };
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(BadRequest(e.Message)) { StatusCode = 400 }; 
+            }
+        }
     }
 }

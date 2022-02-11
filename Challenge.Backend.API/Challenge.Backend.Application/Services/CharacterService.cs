@@ -16,6 +16,7 @@ namespace Challenge.Backend.Application.Services
         GenericCreatedResponseDto CreateCharacter(CharacterRequestDto createCharacter);
         bool UpdateCharacter(int id, CharacterRequestDto characterRequestDto);
         bool DeleteCharacter(int id);
+        ResponseCharacterDetailDto GetCharacterDetail(int id);
     }
     public class CharacterService : ICharacterService
     {
@@ -54,6 +55,20 @@ namespace Challenge.Backend.Application.Services
             {
                 _repository.Delete<Character>(character);
                 return true;
+            }
+        }
+
+        public ResponseCharacterDetailDto GetCharacterDetail(int id)
+        {
+            ResponseCharacterDetailDto characterDetailById = _query.GetCharacterDetail(id);
+            if (characterDetailById == null)
+            {
+                NullReferenceException exception = new NullReferenceException("Personaje con id " + id + " no encontrado");
+                throw exception;
+            }
+            else
+            {
+                return characterDetailById;
             }
         }
 

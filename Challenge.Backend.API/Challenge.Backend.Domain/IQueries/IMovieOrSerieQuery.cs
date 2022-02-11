@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Challenge.Backend.Domain.IQueries
 {
-    public  interface ICharacterQuery
+    public interface IMovieOrSerieQuery
     {
-        List<ResponseGetAllCharacterDto> GetAllCharacters();
-        ResponseCharacterDetailDto GetCharacterDetail(int id);
+        ResponseMovieOrSerieForCharacterDetail GetMoviesOrSeriesById(int id);
     }
 }

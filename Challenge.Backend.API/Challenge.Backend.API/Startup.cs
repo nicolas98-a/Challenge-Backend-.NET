@@ -53,7 +53,9 @@ namespace Challenge.Backend.API
 
             services.AddTransient<IGenericsRepository, GenericRepository>();
             services.AddTransient<ICharacterService, CharacterService>();
+            services.AddTransient<IMovieOrSerieService, MovieOrSerieService>();
             services.AddTransient<ICharacterQuery, CharacterQuery>();
+            services.AddTransient<IMovieOrSerieQuery, MovieOrSerieQuery>();
 
             // Fluent Validation
             services.AddMvc(options =>
