@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Challenge.Backend.Application.Validation
 {
-    public class CharacterValidator : AbstractValidator<CharacterRequestDto>
+    public class CharacterValidator : AbstractValidator<CreateCharacterRequestDto>
     {
         public CharacterValidator()
         {

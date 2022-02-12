@@ -21,7 +21,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Challenge.Backend.API
@@ -68,7 +70,20 @@ namespace Challenge.Backend.API
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Challenge.Backend.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo 
+                { 
+                    Title = "Challenge.Backend.API", 
+                    Version = "v1",
+                    Description = "REST API  para explorar el mundo de Disney",
+                    Contact = new OpenApiContact()
+                    {
+                        Name = "Nicolas Acuña",
+                        Email = "acu.nicolas.1998@gmail.com"
+                    }
+                });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 

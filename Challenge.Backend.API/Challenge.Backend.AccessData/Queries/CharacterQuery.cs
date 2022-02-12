@@ -80,5 +80,6 @@ namespace Challenge.Backend.AccessData.Queries
                 return null;
             }
         }
+
     }
 }

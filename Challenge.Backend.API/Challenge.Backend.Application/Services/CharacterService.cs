@@ -13,10 +13,12 @@ namespace Challenge.Backend.Application.Services
     public interface ICharacterService
     {
         List<ResponseGetAllCharacterDto> GetCharacters();
-        GenericCreatedResponseDto CreateCharacter(CharacterRequestDto createCharacter);
-        bool UpdateCharacter(int id, CharacterRequestDto characterRequestDto);
+        GenericCreatedResponseDto CreateCharacter(CreateCharacterRequestDto createCharacter);
+        bool UpdateCharacter(int id, CreateCharacterRequestDto characterRequestDto);
         bool DeleteCharacter(int id);
         ResponseCharacterDetailDto GetCharacterDetail(int id);
+       // ResponseCharacterForMovieOrSerieDetail GetCharacterById(int id);
+
     }
     public class CharacterService : ICharacterService
     {
@@ -29,7 +31,7 @@ namespace Challenge.Backend.Application.Services
             _query = query;
         }
 
-        public GenericCreatedResponseDto CreateCharacter(CharacterRequestDto createCharacter)
+        public GenericCreatedResponseDto CreateCharacter(CreateCharacterRequestDto createCharacter)
         {
             var entity = new Character
             {
@@ -57,7 +59,21 @@ namespace Challenge.Backend.Application.Services
                 return true;
             }
         }
-
+/*
+        public ResponseCharacterForMovieOrSerieDetail GetCharacterById(int id)
+        {
+            ResponseCharacterForMovieOrSerieDetail characterForMovieOrSerieDetail = _query.GetCharacterForMovieOrSerieDetail(id);
+            if (characterForMovieOrSerieDetail == null)
+            {
+                NullReferenceException exception = new NullReferenceException("Personaje con id " + id + " no encontrado");
+                throw exception;
+            }
+            else
+            {
+                return characterForMovieOrSerieDetail;
+            }
+        }
+*/
         public ResponseCharacterDetailDto GetCharacterDetail(int id)
         {
             ResponseCharacterDetailDto characterDetailById = _query.GetCharacterDetail(id);
@@ -77,7 +93,7 @@ namespace Challenge.Backend.Application.Services
             return _query.GetAllCharacters();
         }
 
-        public bool UpdateCharacter(int id, CharacterRequestDto characterRequestDto)
+        public bool UpdateCharacter(int id, CreateCharacterRequestDto characterRequestDto)
         {
             Character character = _repository.Exists<Character>(id);
             if (character == null)

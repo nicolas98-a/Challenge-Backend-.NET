@@ -10,5 +10,7 @@ namespace Challenge.Backend.Domain.IQueries
     public interface IMovieOrSerieQuery
     {
         ResponseMovieOrSerieForCharacterDetail GetMoviesOrSeriesById(int id);
+        List<ResponseGetAllMovieOrSerieDto> GetAllMovieOrSeries();
+        ResponseMovieOrSerieDetailDto GetMovieOrSerieDetail(int id);
     }
 }

@@ -20,6 +20,10 @@ namespace Challenge.Backend.API.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Devuelve una lista de personajes
+        /// </summary>
+        /// <returns>Retorna la imagen y el nombre del personaje</returns>
         [HttpGet("/characters")]
         [ProducesResponseType(typeof(List<ResponseGetAllCharacterDto>), StatusCodes.Status200OK)]
         public IActionResult GetCharacters()
@@ -35,9 +39,14 @@ namespace Challenge.Backend.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Agrega un personaje
+        /// </summary>
+        /// <param name="character"></param>
+        /// <returns>Retorna el id del personaje y la entidad a la que pertenece</returns>
         [HttpPost]
         [ProducesResponseType(typeof(GenericCreatedResponseDto), StatusCodes.Status201Created)]
-        public IActionResult Post(CharacterRequestDto character)
+        public IActionResult Post(CreateCharacterRequestDto character)
         {
             try
             {
@@ -49,8 +58,14 @@ namespace Challenge.Backend.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Actualiza los datos de un personaje
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="character"></param>
+        /// <returns>No retorna contenido</returns>
         [HttpPut("{id}")]
-        public IActionResult PutCharacter(int id, CharacterRequestDto character)
+        public IActionResult PutCharacter(int id, CreateCharacterRequestDto character)
         {
             try
             {
@@ -69,6 +84,11 @@ namespace Challenge.Backend.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Borra un personaje
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>No retorna contenido</returns>
         [HttpDelete("{id}")]
         public IActionResult DeleteCharacter(int id)
         {
@@ -89,13 +109,18 @@ namespace Challenge.Backend.API.Controllers
             }
         }
 
-        [HttpGet("{Id}")]
+        /// <summary>
+        /// Devuelve el detalle de un personaje segun su id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Retorna los datos de un personaje</returns>
+        [HttpGet("{id}")]
         [ProducesResponseType(typeof(ResponseCharacterDetailDto), StatusCodes.Status200OK)]
-        public IActionResult GetCharacterDetails(int Id)
+        public IActionResult GetCharacterDetails(int id)
         {
             try
             {
-                return new JsonResult(_service.GetCharacterDetail(Id)) { StatusCode = 200 };
+                return new JsonResult(_service.GetCharacterDetail(id)) { StatusCode = 200 };
             }
             catch (Exception e)
             {

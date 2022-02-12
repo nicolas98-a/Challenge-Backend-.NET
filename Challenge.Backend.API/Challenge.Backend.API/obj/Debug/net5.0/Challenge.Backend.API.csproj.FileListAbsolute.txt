@@ -77,3 +77,5 @@ G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backe
 G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.API\obj\Debug\net5.0\ref\Challenge.Backend.API.dll
 G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.API\obj\Debug\net5.0\Challenge.Backend.API.pdb
 G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.API\obj\Debug\net5.0\Challenge.Backend.API.genruntimeconfig.cache
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.API\bin\Debug\net5.0\Challenge.Backend.API.xml
+G:\Visual Studio\Alkemy Challenge backend\Challenge-Backend-.NET\Challenge.Backend.API\Challenge.Backend.API\obj\Debug\net5.0\Challenge.Backend.API.xml

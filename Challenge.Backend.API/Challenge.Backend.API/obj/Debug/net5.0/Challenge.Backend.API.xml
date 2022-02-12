@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Challenge.Backend.API</name>
+    </assembly>
+    <members>
+        <member name="M:Challenge.Backend.API.Controllers.CharacterController.GetCharacters">
+            <summary>
+            Devuelve una lista de personajes
+            </summary>
+            <returns>Retorna la imagen y el nombre del personaje</returns>
+        </member>
+        <member name="M:Challenge.Backend.API.Controllers.CharacterController.Post(Challenge.Backend.Domain.DTOs.CreateCharacterRequestDto)">
+            <summary>
+            Agrega un personaje
+            </summary>
+            <param name="character"></param>
+            <returns>Retorna el id del personaje y la entidad a la que pertenece</returns>
+        </member>
+        <member name="M:Challenge.Backend.API.Controllers.CharacterController.PutCharacter(System.Int32,Challenge.Backend.Domain.DTOs.CreateCharacterRequestDto)">
+            <summary>
+            Actualiza los datos de un personaje
+            </summary>
+            <param name="id"></param>
+            <param name="character"></param>
+            <returns>No retorna contenido</returns>
+        </member>
+        <member name="M:Challenge.Backend.API.Controllers.CharacterController.DeleteCharacter(System.Int32)">
+            <summary>
+            Borra un personaje
+            </summary>
+            <param name="id"></param>
+            <returns>No retorna contenido</returns>
+        </member>
+        <member name="M:Challenge.Backend.API.Controllers.CharacterController.GetCharacterDetails(System.Int32)">
+            <summary>
+            Devuelve el detalle de un personaje segun su id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna los datos de un personaje</returns>
+        </member>
+        <member name="M:Challenge.Backend.API.Controllers.MovieOrSerieController.GetMoviesOrSeries">
+            <summary>
+            Devuelve una lista de peliculas o series
+            </summary>
+            <returns>Retorna la imagen, el titulo y la fecha de creacion de la pelicula o serie</returns>
+        </member>
+        <member name="M:Challenge.Backend.API.Controllers.MovieOrSerieController.GetMovieDetails(System.Int32)">
+            <summary>
+            Devuelve el detalle de una pelicula o serie segun su id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna los datos de una pelicula o serie</returns>
+        </member>
+        <member name="M:Challenge.Backend.API.Controllers.MovieOrSerieController.Post(Challenge.Backend.Domain.DTOs.CreateMovieRequestDto)">
+            <summary>
+            Agrega una pelicula o serie
+            </summary>
+            <param name="movie"></param>
+            <returns>Retorna el id de la pelicula y la entidad a la que pertenece</returns>
+        </member>
+    </members>
+</doc>
