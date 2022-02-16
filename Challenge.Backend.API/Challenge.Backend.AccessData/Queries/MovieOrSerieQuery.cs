@@ -1,5 +1,6 @@
 ﻿using Challenge.Backend.Application.Services;
 using Challenge.Backend.Domain.DTOs;
+using Challenge.Backend.Domain.Entities;
 using Challenge.Backend.Domain.IQueries;
 using SqlKata.Compilers;
 using SqlKata.Execution;
@@ -86,7 +87,8 @@ namespace Challenge.Backend.AccessData.Queries
             var db = new QueryFactory(connection, sqlKataCompiler);
 
             var character = db.Query("Characters")
-                .Select("Characters.Image",
+                .Select("Characters.CharacterId",
+                "Characters.Image",
                 "Characters.Name",
                 "Characters.Age",
                 "Characters.Weight",
@@ -122,5 +124,6 @@ namespace Challenge.Backend.AccessData.Queries
                 return null;
             }
         }
+
     }
 }

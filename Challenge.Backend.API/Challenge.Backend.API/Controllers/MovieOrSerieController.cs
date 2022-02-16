@@ -74,5 +74,56 @@ namespace Challenge.Backend.API.Controllers
                 return new JsonResult(BadRequest(e.Message));
             }
         }
+
+        /// <summary>
+        /// Actualiza los datos de una pelicula o serie
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="movie"></param>
+        /// <returns>No retorna contenido</returns>
+        [HttpPut("{id}")]
+        public IActionResult PutMovieOrSerie(int id, UpdateMovieRequestDto movie)
+        {
+            try
+            {
+                if (_service.UpdateMovie(id, movie))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Borra una pelicula o serie
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>No retorna contenido</returns>
+        [HttpDelete("{id}")]
+        public IActionResult DeleteMovie(int id)
+        {
+            try
+            {
+                if (_service.DeleteMovieOrSerie(id))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

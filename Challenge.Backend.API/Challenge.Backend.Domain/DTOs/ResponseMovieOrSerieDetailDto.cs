@@ -13,7 +13,7 @@ namespace Challenge.Backend.Domain.DTOs
         public DateTime CreationDate { get; set; }
         public int Rating { get; set; }
         public string Genre { get; set; }
-        public IList<ResponseCharacterForMovieOrSerieDetail> Characters { get; set; }
+        public List<ResponseCharacterForMovieOrSerieDetail> Characters { get; set; }
     }
 
     public class ResponseGetMovieDetailGenre
@@ -24,6 +24,7 @@ namespace Challenge.Backend.Domain.DTOs
 
     public class ResponseCharacterForMovieOrSerieDetail
     {
+        public int CharacterId { get; set; }
         public string Image { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
