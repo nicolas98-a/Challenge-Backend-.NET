@@ -26,11 +26,25 @@ namespace Challenge.Backend.API.Controllers
         /// <returns>Retorna la imagen y el nombre del personaje</returns>
         [HttpGet("/characters")]
         [ProducesResponseType(typeof(List<ResponseGetAllCharacterDto>), StatusCodes.Status200OK)]
-        public IActionResult GetCharacters()
+        public IActionResult GetCharacters([FromQuery] string name, [FromQuery] string age)
         {
             try
             {
-                return new JsonResult(_service.GetCharacters()) { StatusCode = 200 };
+                if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(age))
+                {
+                    return new JsonResult(_service.GetCharacters()) { StatusCode = 200 };
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(age))
+                    {
+                        return new JsonResult(_service.GetCharactersByName(name)) { StatusCode = 200 };
+                    }
+                    else
+                    {
+                        return new JsonResult(_service.GetCharactersByAge(age)) { StatusCode = 200 };
+                    }
+                }
             }
             catch (Exception e)
             {

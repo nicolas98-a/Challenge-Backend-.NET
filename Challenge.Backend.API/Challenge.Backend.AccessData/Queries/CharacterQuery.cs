@@ -81,5 +81,30 @@ namespace Challenge.Backend.AccessData.Queries
             }
         }
 
+        public List<ResponseGetAllCharacterDto> GetCharactersByAge(string age)
+        {
+            var db = new QueryFactory(connection, sqlKataCompiler);
+
+            var query = db.Query("Characters")
+                .Select("Characters.Image",
+                "Characters.Name")
+                .Where("Characters.Age".ToString(), "=", age);
+
+            var result = query.Get<ResponseGetAllCharacterDto>();
+            return result.ToList();
+        }
+
+        public List<ResponseGetAllCharacterDto> GetCharactersByName(string name)
+        {
+            var db = new QueryFactory(connection, sqlKataCompiler);
+
+            var query = db.Query("Characters")
+                .Select("Characters.Image",
+                "Characters.Name")
+                .When(!string.IsNullOrWhiteSpace(name), q => q.WhereLike("Characters.Name", $"%{name}%"));
+
+            var result = query.Get<ResponseGetAllCharacterDto>();
+            return result.ToList();
+        }
     }
 }

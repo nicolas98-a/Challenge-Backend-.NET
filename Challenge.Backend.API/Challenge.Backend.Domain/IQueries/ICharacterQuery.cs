@@ -11,6 +11,8 @@ namespace Challenge.Backend.Domain.IQueries
     {
         List<ResponseGetAllCharacterDto> GetAllCharacters();
         ResponseCharacterDetailDto GetCharacterDetail(int id);
-  
+        List<ResponseGetAllCharacterDto> GetCharactersByName(string name);
+        List<ResponseGetAllCharacterDto> GetCharactersByAge(string age);
+
     }
 }
