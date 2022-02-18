@@ -125,5 +125,56 @@ namespace Challenge.Backend.AccessData.Queries
             }
         }
 
+        public List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByName(string name)
+        {
+            var db = new QueryFactory(connection, sqlKataCompiler);
+
+            var query = db.Query("MovieOrSeries")
+                .Select("MovieOrSeries.Image",
+                "MovieOrSeries.Title",
+                "MovieOrSeries.CreationDate")
+                .Where("MovieOrSeries.Title", "=", name);
+            var result = query.Get<ResponseGetAllMovieOrSerieDto>();
+            return result.ToList();
+        }
+
+        public List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByGenreId(string idGenre)
+        {
+            var db = new QueryFactory(connection, sqlKataCompiler);
+
+            var query = db.Query("MovieOrSeries")
+                .Select("MovieOrSeries.Image",
+                "MovieOrSeries.Title",
+                "MovieOrSeries.CreationDate")
+                .Where("MovieOrSeries.GenreId", "=", idGenre);
+            var result = query.Get<ResponseGetAllMovieOrSerieDto>();
+            return result.ToList();
+        }
+
+        public List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByOrder(string order)
+        {
+            var db = new QueryFactory(connection, sqlKataCompiler);
+
+            if (order == "ASC" || order == "asc")
+            {
+                var query = db.Query("MovieOrSeries")
+                .Select("MovieOrSeries.Image",
+                "MovieOrSeries.Title",
+                "MovieOrSeries.CreationDate")
+                .OrderBy("MovieOrSeries.CreationDate");
+                var result = query.Get<ResponseGetAllMovieOrSerieDto>();
+                return result.ToList();
+            }
+            else
+            {
+                var query = db.Query("MovieOrSeries")
+                .Select("MovieOrSeries.Image",
+                "MovieOrSeries.Title",
+                "MovieOrSeries.CreationDate")
+                .OrderByDesc("MovieOrSeries.CreationDate");
+                var result = query.Get<ResponseGetAllMovieOrSerieDto>();
+                return result.ToList();
+            }       
+        }
     }
 }

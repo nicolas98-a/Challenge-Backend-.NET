@@ -39,7 +39,7 @@
             <param name="id"></param>
             <returns>Retorna los datos de un personaje</returns>
         </member>
-        <member name="M:Challenge.Backend.API.Controllers.MovieOrSerieController.GetMoviesOrSeries">
+        <member name="M:Challenge.Backend.API.Controllers.MovieOrSerieController.GetMoviesOrSeries(System.String,System.String,System.String)">
             <summary>
             Devuelve una lista de peliculas o series
             </summary>

@@ -25,11 +25,30 @@ namespace Challenge.Backend.API.Controllers
         /// <returns>Retorna la imagen, el titulo y la fecha de creacion de la pelicula o serie</returns>
         [HttpGet("/movies")]
         [ProducesResponseType(typeof(List<ResponseGetAllMovieOrSerieDto>), StatusCodes.Status200OK)]
-        public IActionResult GetMoviesOrSeries()
+        public IActionResult GetMoviesOrSeries([FromQuery] string name, [FromQuery] string idGenre, [FromQuery] string order)
         {
             try
             {
-                return new JsonResult(_service.GetMoviesOrSeries()) { StatusCode = 200 };
+                if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(idGenre) && string.IsNullOrEmpty(order))
+                {
+                    return new JsonResult(_service.GetMoviesOrSeries()) { StatusCode = 200 };
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(idGenre) && string.IsNullOrEmpty(order))
+                    {
+                        return new JsonResult(_service.GetMoviesOrSeriesByName(name)) { StatusCode = 200 };
+                    }
+                    else if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(idGenre))
+                    {
+                        return new JsonResult(_service.GetMoviesOrSeriesByOrder(order)) { StatusCode = 200 };
+                    }
+                    else
+                    {
+                        return new JsonResult(_service.GetMoviesOrSeriesByGenreId(idGenre)) { StatusCode = 200 };
+                    }
+                }
+                
             }
             catch (Exception e)
             {

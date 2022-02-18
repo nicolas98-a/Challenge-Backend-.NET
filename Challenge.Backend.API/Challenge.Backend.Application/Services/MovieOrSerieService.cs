@@ -14,6 +14,9 @@ namespace Challenge.Backend.Application.Services
     {
         ResponseMovieOrSerieForCharacterDetail GetMovieOrSerieById(int id);
         List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeries();
+        List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByName( string name);
+        List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByGenreId(string idGenre);
+        List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByOrder(string order);
         ResponseMovieOrSerieDetailDto GetMovieOrSerieDetail(int id);
         GenericCreatedResponseDto CreateMovieOrSerie(CreateMovieRequestDto movieRequestDto);
         bool UpdateMovie(int id, UpdateMovieRequestDto movieRequestDto);
@@ -167,6 +170,21 @@ namespace Challenge.Backend.Application.Services
                 return true;
             }
 
+        }
+
+        public List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByName(string name)
+        {
+            return _query.GetMoviesOrSeriesByName(name);
+        }
+
+        public List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByGenreId(string idGenre)
+        {
+            return _query.GetMoviesOrSeriesByGenreId(idGenre);
+        }
+
+        public List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByOrder(string order)
+        {
+            return _query.GetMoviesOrSeriesByOrder(order);
         }
     }
 }

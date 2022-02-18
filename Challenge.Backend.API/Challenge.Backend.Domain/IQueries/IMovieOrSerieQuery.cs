@@ -11,6 +11,9 @@ namespace Challenge.Backend.Domain.IQueries
     {
         ResponseMovieOrSerieForCharacterDetail GetMoviesOrSeriesById(int id);
         List<ResponseGetAllMovieOrSerieDto> GetAllMovieOrSeries();
+        List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByName(string name);
+        List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByGenreId(string idGenre);
+        List<ResponseGetAllMovieOrSerieDto> GetMoviesOrSeriesByOrder(string order);
         ResponseMovieOrSerieDetailDto GetMovieOrSerieDetail(int id);
     }
 }
