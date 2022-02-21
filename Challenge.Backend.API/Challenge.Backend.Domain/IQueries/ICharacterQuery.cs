@@ -13,6 +13,7 @@ namespace Challenge.Backend.Domain.IQueries
         ResponseCharacterDetailDto GetCharacterDetail(int id);
         List<ResponseGetAllCharacterDto> GetCharactersByName(string name);
         List<ResponseGetAllCharacterDto> GetCharactersByAge(string age);
+        List<ResponseGetAllCharacterDto> GetCharactersByIdMovie(string idMovie);
 
     }
 }

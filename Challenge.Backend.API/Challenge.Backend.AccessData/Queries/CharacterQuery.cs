@@ -94,6 +94,33 @@ namespace Challenge.Backend.AccessData.Queries
             return result.ToList();
         }
 
+        public List<ResponseGetAllCharacterDto> GetCharactersByIdMovie(string idMovie)
+        {
+            var db = new QueryFactory(connection, sqlKataCompiler);
+
+            var idsCharacters = db.Query("CharacterMovieOrSeries")
+                .Select("CharacterId")
+                .Where("MovieOrSerieId", "=", idMovie)
+                .Get<int>().ToList();
+
+            List<ResponseGetAllCharacterDto> characters = new List<ResponseGetAllCharacterDto>();
+
+            foreach (var item in idsCharacters)
+            {
+                var query = db.Query("Characters")
+                    .Select("Characters.Image",
+                    "Characters.Name")
+                    .Where("Characters.CharacterId", "=", item);
+
+                var result = query.FirstOrDefault<ResponseGetAllCharacterDto>();
+
+                characters.Add(result);
+            }
+
+
+            return characters;
+        }
+
         public List<ResponseGetAllCharacterDto> GetCharactersByName(string name)
         {
             var db = new QueryFactory(connection, sqlKataCompiler);

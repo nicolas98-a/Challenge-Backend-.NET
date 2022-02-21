@@ -15,6 +15,7 @@ namespace Challenge.Backend.Application.Services
         List<ResponseGetAllCharacterDto> GetCharacters();
         List<ResponseGetAllCharacterDto> GetCharactersByName(string name);
         List<ResponseGetAllCharacterDto> GetCharactersByAge(string age);
+        List<ResponseGetAllCharacterDto> GetCharactersByIdMovie(string idMovie);
         GenericCreatedResponseDto CreateCharacter(CreateCharacterRequestDto createCharacter);
         bool UpdateCharacter(int id, CreateCharacterRequestDto characterRequestDto);
         bool DeleteCharacter(int id);
@@ -98,6 +99,11 @@ namespace Challenge.Backend.Application.Services
         public List<ResponseGetAllCharacterDto> GetCharactersByAge(string age)
         {
             return _query.GetCharactersByAge(age);
+        }
+
+        public List<ResponseGetAllCharacterDto> GetCharactersByIdMovie(string idMovie)
+        {
+            return _query.GetCharactersByIdMovie(idMovie);
         }
 
         public List<ResponseGetAllCharacterDto> GetCharactersByName(string name)

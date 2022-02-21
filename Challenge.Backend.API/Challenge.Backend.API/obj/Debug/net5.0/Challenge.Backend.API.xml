@@ -4,7 +4,7 @@
         <name>Challenge.Backend.API</name>
     </assembly>
     <members>
-        <member name="M:Challenge.Backend.API.Controllers.CharacterController.GetCharacters(System.String,System.String)">
+        <member name="M:Challenge.Backend.API.Controllers.CharacterController.GetCharacters(System.String,System.String,System.String)">
             <summary>
             Devuelve una lista de personajes
             </summary>
