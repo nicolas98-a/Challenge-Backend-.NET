@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Challenge.Backend.API.Authentication
+﻿namespace Challenge.Backend.API.Authentication
 {
     public static class UserRoles
     {

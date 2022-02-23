@@ -2,11 +2,6 @@
 using Challenge.Backend.Domain.Entities;
 using Challenge.Backend.Domain.ICommands;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Challenge.Backend.Application.Validation
 {
@@ -22,7 +17,6 @@ namespace Challenge.Backend.Application.Validation
             RuleFor(e => e.Title).NotNull().NotEmpty().WithMessage("El campo titulo no puede quedar vacio");
             RuleFor(e => e.Title).MaximumLength(50).WithMessage("Cantidad de caracteres del titulo excedido");
             RuleFor(e => e.CreationDate).NotNull().NotEmpty().WithMessage("El campo fecha de creacion no puede quedar vacio");
-           // RuleFor(e => e.CreationDate);
             RuleFor(e => e.Rating).NotNull().NotEmpty().WithMessage("El campo calificacion no puede estar vacio");
             RuleFor(e => e.Rating).GreaterThan(0).LessThan(6).WithMessage("La calificacion debe ser de 1 a 5");
             RuleFor(e => e.GenreId).Must(ExistGenre).WithMessage("Genero no valido");

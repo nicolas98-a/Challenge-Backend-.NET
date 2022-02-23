@@ -39,36 +39,40 @@ namespace Challenge.Backend.API.Controllers
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
             var user = await userManeger.FindByNameAsync(model.Username);
-            if (user != null && await userManeger.CheckPasswordAsync(user, model.Password))
+            if (user != null)
             {
-                var userRoles = await userManeger.GetRolesAsync(user);
-                var authClaims = new List<Claim>
+                if (await userManeger.CheckPasswordAsync(user, model.Password))
                 {
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                };
+                    var userRoles = await userManeger.GetRolesAsync(user);
+                    var authClaims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, user.UserName),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    };
 
-                foreach (var userRol in userRoles)
-                {
-                    authClaims.Add(new Claim(ClaimTypes.Role, userRol));
+                    foreach (var userRol in userRoles)
+                    {
+                        authClaims.Add(new Claim(ClaimTypes.Role, userRol));
+                    }
+
+                    var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+                    var token = new JwtSecurityToken(
+                        issuer: _configuration["JWT:ValidIssuer"],
+                        audience: _configuration["JWT:ValidAudience"],
+                        expires: DateTime.Now.AddHours(3),
+                        claims: authClaims,
+                        signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256));
+
+                    return Ok(new
+                    {
+                        token = new JwtSecurityTokenHandler().WriteToken(token),
+                        expiration = token.ValidTo
+                    });
                 }
-
-                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
-                var token = new JwtSecurityToken(
-                    issuer: _configuration["JWT:ValidIssuer"],
-                    audience: _configuration["JWT:ValidAudience"],
-                    expires: DateTime.Now.AddHours(3),
-                    claims: authClaims,
-                    signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256));
-
-                return Ok(new
-                {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
-                    expiration = token.ValidTo
-                });
+                return BadRequest(new Response { Status = "Error", Message = "Contraseña incorrecta" });
             }
-            
-            return BadRequest(new Response { Status = "Error", Message = "Usuario no registrado"});
+
+            return BadRequest(new Response { Status = "Error", Message = "Usuario no registrado" });
         }
 
         /// <summary>

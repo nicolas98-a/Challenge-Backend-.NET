@@ -1,13 +1,10 @@
 ﻿using Challenge.Backend.Application.Services;
 using Challenge.Backend.Domain.DTOs;
-using Challenge.Backend.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Challenge.Backend.API.Controllers
 {
@@ -28,23 +25,23 @@ namespace Challenge.Backend.API.Controllers
         /// <returns>Retorna la imagen y el nombre del personaje</returns>
         [HttpGet("/characters")]
         [ProducesResponseType(typeof(List<ResponseGetAllCharacterDto>), StatusCodes.Status200OK)]
-        public IActionResult GetCharacters([FromQuery] string name, [FromQuery] string age, [FromQuery] string idMovie)
+        public IActionResult GetCharacters([FromQuery] string name, [FromQuery] string age, [FromQuery] string movies)
         {
             try
             {
-                if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(age) && string.IsNullOrEmpty(idMovie))
+                if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(age) && string.IsNullOrEmpty(movies))
                 {
                     return new JsonResult(_service.GetCharacters()) { StatusCode = 200 };
                 }
                 else
                 {
-                    if (string.IsNullOrEmpty(age) && string.IsNullOrEmpty(idMovie))
+                    if (string.IsNullOrEmpty(age) && string.IsNullOrEmpty(movies))
                     {
                         return new JsonResult(_service.GetCharactersByName(name)) { StatusCode = 200 };
                     }
                     else if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(age))
                     {
-                        return new JsonResult(_service.GetCharactersByIdMovie(idMovie)) { StatusCode = 200 };
+                        return new JsonResult(_service.GetCharactersByIdMovie(movies)) { StatusCode = 200 };
                     }
                     else
                     {

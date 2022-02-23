@@ -1,13 +1,7 @@
 ﻿using Challenge.Backend.AccessData.Configuration;
 using Challenge.Backend.Domain.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Challenge.Backend.AccessData
 {

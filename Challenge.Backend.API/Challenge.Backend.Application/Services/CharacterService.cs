@@ -4,9 +4,6 @@ using Challenge.Backend.Domain.ICommands;
 using Challenge.Backend.Domain.IQueries;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Challenge.Backend.Application.Services
 {
@@ -20,7 +17,7 @@ namespace Challenge.Backend.Application.Services
         bool UpdateCharacter(int id, CreateCharacterRequestDto characterRequestDto);
         bool DeleteCharacter(int id);
         ResponseCharacterDetailDto GetCharacterDetail(int id);
-       // ResponseCharacterForMovieOrSerieDetail GetCharacterById(int id);
+       
 
     }
     public class CharacterService : ICharacterService
@@ -62,21 +59,7 @@ namespace Challenge.Backend.Application.Services
                 return true;
             }
         }
-/*
-        public ResponseCharacterForMovieOrSerieDetail GetCharacterById(int id)
-        {
-            ResponseCharacterForMovieOrSerieDetail characterForMovieOrSerieDetail = _query.GetCharacterForMovieOrSerieDetail(id);
-            if (characterForMovieOrSerieDetail == null)
-            {
-                NullReferenceException exception = new NullReferenceException("Personaje con id " + id + " no encontrado");
-                throw exception;
-            }
-            else
-            {
-                return characterForMovieOrSerieDetail;
-            }
-        }
-*/
+
         public ResponseCharacterDetailDto GetCharacterDetail(int id)
         {
             ResponseCharacterDetailDto characterDetailById = _query.GetCharacterDetail(id);

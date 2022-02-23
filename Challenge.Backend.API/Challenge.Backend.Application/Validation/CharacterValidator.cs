@@ -1,10 +1,5 @@
 ﻿using Challenge.Backend.Domain.DTOs;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Challenge.Backend.Application.Validation
 {
@@ -18,7 +13,7 @@ namespace Challenge.Backend.Application.Validation
             RuleFor(e => e.Age).NotNull().NotEmpty().WithMessage("El campo edad no puede quedar vacio");
             RuleFor(e => e.Age).GreaterThan(-1).WithMessage("La edad debe ser mayor o igual que cero");
             RuleFor(e => e.Weight).NotNull().NotEmpty().WithMessage("El campo peso no puede quedar vacio");
-            RuleFor(e => e.Weight).GreaterThan(-1).WithMessage("El peso debe ser mayor o igual que cero");
+            RuleFor(e => e.Weight).GreaterThan(0).WithMessage("El peso debe ser mayor que cero");
             RuleFor(e => e.History).NotNull().NotEmpty().WithMessage("El campo historia no puede quedar vacio");
 
         }

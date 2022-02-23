@@ -4,9 +4,6 @@ using Challenge.Backend.Domain.ICommands;
 using Challenge.Backend.Domain.IQueries;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Challenge.Backend.Application.Services
 {
@@ -49,20 +46,10 @@ namespace Challenge.Backend.Application.Services
             };
 
             _repository.Add(entity);
-            /*
-            foreach (var item in movieRequestDto.Characters)
-            {
-                RegisterChracterMovie(item, entity.MovieOrSerieId);
-            }
-            */
+
             return new GenericCreatedResponseDto { Entity = "MovieOrSerie", Id = entity.MovieOrSerieId.ToString() };
         }
 
-        private void RegisterChracterMovie(int idCharacter, int idMovie)
-        {
-            var entity = new CharacterMovieOrSerie { CharacterId = idCharacter, MovieOrSerieId = idMovie };
-            _repository.Add(entity);
-        }
         private List<Character> GetCharactersFromRequest(IList<int> ids)
         {
             List<Character> charactersAux = new List<Character>();
@@ -134,39 +121,13 @@ namespace Challenge.Backend.Application.Services
             }
             else
             {
-                /*
-                List<Character> charactersAux = GetCharactersFromRequest(movieRequestDto.Characters);
-                List<ResponseCharacterForMovieOrSerieDetail> charactersRegistered = GetMovieOrSerieDetail(id).Characters;
-                List<int> ids = new List<int>();
-                foreach (var item in charactersAux)
-                {
-                    foreach (var i in charactersRegistered)
-                    {
-                        if (i.CharacterId == item.CharacterId)
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            ids.Add(item.CharacterId);
-                        }                     
-                    }
-                }
-                */
                 movie.Image = movieRequestDto.Image;
                 movie.Title = movieRequestDto.Title;
                 movie.CreationDate = movieRequestDto.CreationDate;
                 movie.Rating = movieRequestDto.Rating;
                 movie.GenreId = movieRequestDto.GenreId;
-                //movie.CharactersNavigator = charactersAux;
 
                 _repository.Update<MovieOrSerie>(movie);
-                /*
-                foreach (var c in ids)
-                {
-                    RegisterChracterMovie(c, id);
-                }
-                */
                 return true;
             }
 

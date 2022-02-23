@@ -1,10 +1,5 @@
 ﻿using Challenge.Backend.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Challenge.Backend.AccessData.Configuration
 {
@@ -18,7 +13,6 @@ namespace Challenge.Backend.AccessData.Configuration
             entityTypeBuilder.Property(x => x.Age).IsRequired();
             entityTypeBuilder.Property(x => x.Weight).IsRequired();
             entityTypeBuilder.Property(x => x.History).IsRequired();
-
         }
     }
 }
