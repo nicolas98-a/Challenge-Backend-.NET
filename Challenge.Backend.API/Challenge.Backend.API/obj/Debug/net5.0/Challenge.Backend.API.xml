@@ -4,6 +4,20 @@
         <name>Challenge.Backend.API</name>
     </assembly>
     <members>
+        <member name="M:Challenge.Backend.API.Controllers.AuthenticateController.Login(Challenge.Backend.API.Authentication.LoginModel)">
+            <summary>
+            Permite loguear un usuario registrado
+            </summary>
+            <param name="model"></param>
+            <returns>Retorna un token y cuando expira</returns>
+        </member>
+        <member name="M:Challenge.Backend.API.Controllers.AuthenticateController.Register(Challenge.Backend.API.Authentication.RegisterModel)">
+            <summary>
+            Permite registrar un nuevo usuario
+            </summary>
+            <param name="model"></param>
+            <returns>Retorna un mensaje de registro satisfactorio</returns>
+        </member>
         <member name="M:Challenge.Backend.API.Controllers.CharacterController.GetCharacters(System.String,System.String,System.String)">
             <summary>
             Devuelve una lista de personajes

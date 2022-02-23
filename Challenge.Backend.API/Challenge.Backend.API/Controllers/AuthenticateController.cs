@@ -29,6 +29,11 @@ namespace Challenge.Backend.API.Controllers
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Permite loguear un usuario registrado
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Retorna un token y cuando expira</returns>
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
@@ -62,9 +67,15 @@ namespace Challenge.Backend.API.Controllers
                     expiration = token.ValidTo
                 });
             }
-            return Unauthorized();
+            
+            return BadRequest(new Response { Status = "Error", Message = "Usuario no registrado"});
         }
 
+        /// <summary>
+        /// Permite registrar un nuevo usuario
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Retorna un mensaje de registro satisfactorio</returns>
         [HttpPost]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
