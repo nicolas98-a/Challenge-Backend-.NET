@@ -1,20 +1,24 @@
 using Challenge.Backend.AccessData;
 using Challenge.Backend.AccessData.Commands;
 using Challenge.Backend.AccessData.Queries;
+using Challenge.Backend.API.Authentication;
 using Challenge.Backend.Application.Filters;
 using Challenge.Backend.Application.Services;
 using Challenge.Backend.Domain.ICommands;
 using Challenge.Backend.Domain.IQueries;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SqlKata.Compilers;
 using System;
@@ -24,6 +28,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Challenge.Backend.API
@@ -42,9 +47,39 @@ namespace Challenge.Backend.API
         {
 
             services.AddControllers();
-            var connectionstring = Configuration.GetSection("ConnectionString").Value;
+            //var connectionstring = Configuration.GetSection("ConnectionString").Value;
+            var connectionstring = Configuration.GetConnectionString("DefaultConnection");
+            var authConnectionstring = Configuration.GetConnectionString("AuthConnection");
             //EF Core
             services.AddDbContext<DisneyDbContext>(options => options.UseSqlServer(connectionstring));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(authConnectionstring));
+
+            // For Identity
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            // Adding Authentication
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                // Adding Jwt Bearer
+                .AddJwtBearer(options =>
+                {
+                    options.SaveToken = true;
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidAudience = Configuration["JWT:ValidAudience"],
+                        ValidIssuer = Configuration["JWT:ValidIssuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
+                    };
+                });
 
             // SQLKata
             services.AddTransient<Compiler, SqlServerCompiler>();
@@ -100,6 +135,8 @@ namespace Challenge.Backend.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

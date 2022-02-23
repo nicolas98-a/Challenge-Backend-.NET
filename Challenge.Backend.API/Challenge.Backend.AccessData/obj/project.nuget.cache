@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GkrG6PlD9eX7VOYUa6n/w2IVuvsnFam/blIdWgnmZLUeHpPvfxW3+KHNgf81omncOEE7/5qAlF2/SH9Hy6onyg==",
+  "dgSpecHash": "A3mxAQucgHgEhIVy1j1BtISv/jLrIG2Usu62NSdFhKIjHal5PKCS1dxeakIJMzZcnTOmN0/hbFcxCCEJmbpWtA==",
   "success": true,
   "projectFilePath": "G:\\Visual Studio\\Alkemy Challenge backend\\Challenge-Backend-.NET\\Challenge.Backend.API\\Challenge.Backend.AccessData\\Challenge.Backend.AccessData.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,9 @@
     "C:\\Users\\Nico\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.2.1\\fluentvalidation.aspnetcore.10.2.1.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.2.1\\fluentvalidation.dependencyinjectionextensions.10.2.1.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.6\\microsoft.aspnetcore.cryptography.internal.5.0.6.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.6\\microsoft.aspnetcore.cryptography.keyderivation.5.0.6.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.6\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.6.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
@@ -24,6 +27,8 @@
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.6\\microsoft.extensions.identity.core.5.0.6.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.6\\microsoft.extensions.identity.stores.5.0.6.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",

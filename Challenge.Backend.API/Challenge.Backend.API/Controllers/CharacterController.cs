@@ -1,6 +1,7 @@
 ﻿using Challenge.Backend.Application.Services;
 using Challenge.Backend.Domain.DTOs;
 using Challenge.Backend.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Challenge.Backend.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CharacterController : ControllerBase

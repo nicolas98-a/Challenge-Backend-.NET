@@ -1,5 +1,6 @@
 ﻿using Challenge.Backend.AccessData.Configuration;
 using Challenge.Backend.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Challenge.Backend.AccessData
 {
-    public class DisneyDbContext : DbContext
+    public class DisneyDbContext : DbContext 
     {
         public DisneyDbContext(DbContextOptions<DisneyDbContext> options) : base(options)
         { }

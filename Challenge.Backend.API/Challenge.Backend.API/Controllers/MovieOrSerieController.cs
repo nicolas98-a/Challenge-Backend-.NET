@@ -1,5 +1,6 @@
 ﻿using Challenge.Backend.Application.Services;
 using Challenge.Backend.Domain.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Challenge.Backend.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MovieOrSerieController : ControllerBase
